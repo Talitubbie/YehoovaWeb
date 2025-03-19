@@ -1,32 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ye-nerator</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOOVA - Celebration Token</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+    .meme-section {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background-image: url('https://via.placeholder.com/1024x300'); /* Replace with your meme image */
+      background-size: cover;
+      background-position: center;
+    }
+    .meme-section .ticker {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 48px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    .content {
+      padding: 20px;
+    }
+    .description {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+    .tweet-generator {
+      margin-top: 40px;
+    }
+    .tweet-generator textarea {
+      width: 80%;
+      height: 100px;
+      padding: 10px;
+      font-size: 16px;
+      resize: none;
+    }
+    .tweet-generator button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .tweet-preview {
+      margin: 20px auto;
+      background: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 80%;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Ye-nerator</h1>
-    <p class="description">Tryck på knappen för att höra Kanye!</p>
-    <img src="images/yehoova_meme.jpg" alt="Meme" class="meme-image">
-  </header>
-  <main>
-    <h2>Tweet Generator</h2>
-    <div id="tweetBox">
-      <p id="tweetText">Kanye säger något galet...</p>
+  <!-- Meme section with ticker -->
+  <div class="meme-section">
+    <div class="ticker">HOOVA</div>
+  </div>
+
+  <div class="content">
+    <!-- Updated Description -->
+    <div class="description">Celebration Token To The King Of Tweets - God Of Controversy</div>
+
+    <!-- Tweet generator -->
+    <div class="tweet-generator">
+      <h3>Tweet Generator</h3>
+      <textarea id="tweetInput" placeholder="Write your tweet here..."></textarea><br>
+      <button onclick="generateTweet()">Generate Tweet</button>
+      <div id="tweetPreview" class="tweet-preview"></div>
     </div>
-    <!-- Label above the button -->
-    <h3>Yenerator</h3>
-    <!-- Single large dollar-sign button -->
-    <button id="generateBtn" style="font-size: 48px;">$</button>
-    <!-- Audio element using the working audio file -->
-    <audio id="yeSound" src="audio/ye_sound.mp3"></audio>
-  </main>
-  <footer>
-    <p>En del av <a href="#">HOOVA</a> projektet.</p>
-  </footer>
-  <script src="script.js"></script>
+  </div>
+
+  <script>
+    function generateTweet() {
+      const tweet = document.getElementById('tweetInput').value;
+      document.getElementById('tweetPreview').innerText = tweet;
+    }
+  </script>
 </body>
 </html>
