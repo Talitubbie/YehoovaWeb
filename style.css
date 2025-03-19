@@ -1,0 +1,23 @@
+// Predefined Kanye tweets
+const kanyeTweets = [
+  "I feel like I'm too busy writing history to read it.",
+  "I am the number one human being in music. That means any person in the world who listens to my music or writes about me is just a total idiot.",
+  "I still think I am the greatest.",
+  "I love sleep; it's my favorite.",
+  "My greatest pain in life is that I will never be able to see myself perform live."
+];
+
+// Function to update the tweet generator
+function generateTweet() {
+  const tweetText = document.getElementById('tweetText');
+  // Pick a random tweet from the predefined list
+  const randomTweet = kanyeTweets[Math.floor(Math.random() * kanyeTweets.length)];
+  tweetText.innerText = randomTweet;
+
+  // Play the single Kanye audio clip
+  const audio = new Audio("audio/ye_sound.mp3");
+  audio.play();
+}
+
+// Add event listener to the updated button (with "$" as text)
+document.getElementById('generateBtn').addEventListener('click', generateTweet);
